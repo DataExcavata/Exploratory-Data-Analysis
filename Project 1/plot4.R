@@ -45,11 +45,11 @@ yaxis4 <- "Global_reactive_power"
 
 ## Draw 4 graphs on the same plot
 png("plot4.png")
-par(mfrow = c(2,2)
+par(mfrow = c(2,2))
 
 ### GRAPH 1
-#### Plot Global_active power for the isolated range
-plot(powerrange$Time, powerrange$Global_active_power, type = 'l', ylab = yaxis1, xaxt = 'n')
+#### Plot Global_active_power for the isolated range
+plot(powerrange$Time, powerrange$Global_active_power, type = 'l', xlab = '', ylab = yaxis1, xaxt = 'n')
 
 #### Add the axis labels that were supressed in the previous plot() arguments
 axis(1,0:2,c("Thu", "Fri", "Sat"))
@@ -75,7 +75,7 @@ lines(powerrange$Time, powerrange$Sub_metering_3, col = "blue")
 axis(1,0:2,c("Thu", "Fri", "Sat"))
 
 #### Add the legend to the graph
-legend("topright", lty = 1, legend = powerlegend3, col = legendcolors3)
+legend("topright", lty = 1, bty = 'n', legend = powerlegend3, col = legendcolors3)
 
 ### Graph 4
 #### Plot Global_reactive_power for the isolated range
